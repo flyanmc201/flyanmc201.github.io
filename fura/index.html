@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>furarchi论坛-高端家居美学与极简设计交流社区</title>
+    <meta name="description" content="furarchi论坛是专注于高端家具设计、极简主义生活方式与室内装修美学的专业在线社区。汇聚全球设计灵感、家具测评、软装搭配技巧及建材选购指南。">
+    <meta name="keywords" content="furarchi论坛,家具设计,极简主义,室内装修,软装搭配,家居美学,家具测评">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #34495e;
+            border-color: #34495e;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Header */
+        header {
+            height: var(--header-height);
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        /* Forum Categories */
+        .categories-section {
+            padding: 50px 0;
+        }
+
+        .section-header {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .card-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #f0f2f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .card-stats {
+            margin-left: auto;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            display: flex;
+            gap: 10px;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .card-body p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: #f0f2f5;
+            color: var(--text-light);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+
+        /* Latest Topics */
+        .topics-section {
+            padding: 50px 0;
+            background-color: #fff;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .topics-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .topics-table th {
+            text-align: left;
+            padding: 15px 20px;
+            background-color: #f8f9fa;
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .topics-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .topics-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        .topic-title {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .topic-meta {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .topic-meta span {
+            margin-right: 15px;
+        }
+
+        .topic-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+        }
+
+        /* Guide / Info Section */
+        .guide-section {
+            padding: 50px 0;
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .guide-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .guide-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .guide-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .guide-text p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .guide-steps {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .guide-steps li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .step-num {
+            background-color: var(--accent-color);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .topics-table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <span>◆</span> furarchi论坛
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">设计灵感</a></li>
+                    <li><a href="#">家具测评</a></li>
+                    <li><a href="#">装修干货</a></li>
+                    <li><a href="#">品牌库</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">注册</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>探索极简家居美学</h1>
+            <p>加入 furarchi论坛，与全球设计师、家居爱好者一同探讨现代家具设计、室内空间布局与生活方式。</p>
+            <a href="#" class="btn btn-primary">开始探索</a>
+            <a href="#" class="btn btn-outline" style="margin-left: 10px;">浏览分类</a>
+        </div>
+    </section>
+
+    <main>
+        <section class="categories-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>热门讨论版块</h2>
+                    <a href="#" style="color: var(--primary-color); font-weight: 500;">查看全部版块 &rarr;</a>
+                </div>
+                <div class="grid-layout">
+                    <article class="category-card">
+                        <div class="card-header">
+                            <div class="card-icon">🛋️</div>
+                            <div class="card-title">现代家具设计</div>
+                            <div class="card-stats">1.2w 帖子</div>
+                        </div>
+                        <div class="card-body">
+                            <p>分享最新的椅子、沙发、茶几设计，讨论材质工艺与人体工学。</p>
+                            <div class="card-tags">
+                                <span class="tag">北欧风</span>
+                                <span class="tag">极简主义</span>
+                                <span class="tag">皮质沙发</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="category-card">
+                        <div class="card-header">
+                            <div class="card-icon">🏠</div>
+                            <div class="card-title">室内装修与软装</div>
+                            <div class="card-stats">8.5k 帖子</div>
+                        </div>
+                        <div class="card-body">
+                            <p>从硬装改造到软装搭配，展示您的理想家居环境，获取专业建议。</p>
+                            <div class="card-tags">
+                                <span class="tag">全屋定制</span>
+                                <span class="tag">灯光设计</span>
+                                <span class="tag">窗帘搭配</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="category-card">
+                        <div class="card-header">
+                            <div class="card-icon">✨</div>
+                            <div class="card-title">家居美学摄影</div>
+                            <div class="card-stats">3.4k 帖子</div>
+                        </div>
+                        <div class="card-body">
+                            <p>晒出您的家居角落，用镜头记录生活中的美好瞬间与设计细节。</p>
+                            <div class="card-tags">
+                                <span class="tag">Ins风</span>
+                                <span class="tag">摄影技巧</span>
+                                <span class="tag">色彩搭配</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="category-card">
+                        <div class="card-header">
+                            <div class="card-icon">🛍️</div>
+                            <div class="card-title">品牌与选购指南</div>
+                            <div class="card-stats">5.1k 帖子</div>
+                        </div>
+                        <div class="card-body">
+                            <p>深度评测国内外家居品牌，提供真实的购买建议与避坑指南。</p>
+                            <div class="card-tags">
+                                <span class="tag">宜家</span>
+                                <span class="tag">MUJI</span>
+                                <span class="tag">电商测评</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="category-card">
+                        <div class="card-header">
+                            <div class="card-icon">🌳</div>
+                            <div class="card-title">可持续家居</div>
+                            <div class="card-stats">2.2k 帖子</div>
+                        </div>
+                        <div class="card-body">
+                            <p>关注环保材料、二手家具交易与低碳生活方式的实践。</p>
+                            <div class="card-tags">
+                                <span class="tag">环保材料</span>
+                                <span class="tag">二手交易</span>
+                                <span class="tag">DIY</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="category-card">
+                        <div class="card-header">
+                            <div class="card-icon">💬</div>
+                            <div class="card-title">闲聊与生活</div>
+                            <div class="card-stats">15k 帖子</div>
+                        </div>
+                        <div class="card-body">
+                            <p>除了家具，我们聊设计、聊艺术、聊生活。欢迎加入我们的日常。</p>
+                            <div class="card-tags">
+                                <span class="tag">闲聊</span>
+                                <span class="tag">艺术</span>
+                                <span class="tag">音乐</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="topics-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>最新精华话题</h2>
+                </div>
+                <table class="topics-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">话题标题</th>
+                            <th style="width: 20%;">作者</th>
+                            <th style="width: 15%;">回复</th>
+                            <th style="width: 15%;">最后回复</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="#" class="topic-title">2024年极简主义家具趋势：线条与留白的艺术</a>
+                                <div class="topic-meta">分类：现代家具设计</div>
+                            </td>
+                            <td>
+                                <div class="topic-author">
+                                    <div class="avatar"></div>
+                                    <span>DesignMaster</span>
+                                </div>
+                            </td>
+                            <td>128</td>
+                            <td>5分钟前</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#" class="topic-title">求助：小户型客厅如何利用极简沙发节省空间？</a>
+                                <div class="topic-meta">分类：室内装修与软装</div>
+                            </td>
+                            <td>
+                                <div class="topic-author">
+                                    <div class="avatar"></div>
+                                    <span>小户型住户</span>
+                                </div>
+                            </td>
+                            <td>45</td>
+                            <td>20分钟前</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#" class="topic-title">[测评] 这款Eames仿版真皮沙发真的值得买吗？</a>
+                                <div class="topic-meta">分类：品牌与选购指南</div>
+                            </td>
+                            <td>
+                                <div class="topic-author">
+                                    <div class="avatar"></div>
+                                    <span>家居侦探</span>
+                                </div>
+                            </td>
+                            <td>89</td>
+                            <td>1小时前</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#" class="topic-title">分享我的北欧风客厅软装搭配思路（附清单）</a>
+                                <div class="topic-meta">分类：家居美学摄影</div>
+                            </td>
+                            <td>
+                                <div class="topic-author">
+                                    <div class="avatar"></div>
+                                    <span>HomeDecor</span>
+                                </div>
+                            </td>
+                            <td>210</td>
+                            <td>2小时前</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#" class="topic-title">讨论：实木家具的日常保养与开裂预防</a>
+                                <div class="topic-meta">分类：现代家具设计</div>
+                            </td>
+                            <td>
+                                <div class="topic-author">
+                                    <div class="avatar"></div>
+                                    <span>木工大叔</span>
+                                </div>
+                            </td>
+                            <td>67</td>
+                            <td>3小时前</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="guide-section">
+            <div class="container guide-content">
+                <div class="guide-text">
+                    <h2>如何参与 furarchi 论坛？</h2>
+                    <p>无论您是资深设计师、装修新手，还是单纯的家居爱好者，这里都有属于您的空间。我们致力于打造一个纯粹、专业、友好的交流环境。</p>
+                    <ul class="guide-steps">
+                        <li>
+                            <span class="step-num">1</span>
+                            <div>
+                                <strong>浏览版块</strong>
+                                <p>根据您的兴趣选择版块，如“现代家具设计”或“软装搭配”。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-num">2</span>
+                            <div>
+                                <strong>阅读与互动</strong>
+                                <p>阅读其他会员的分享，发表您的见解或提出专业问题。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="step-num">3</span>
+                            <div>
+                                <strong>分享与成长</strong>
+                                <p>上传您的家居作品，参与每周的主题活动，获取设计灵感。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div style="flex: 0 0 300px; display: flex; flex-direction: column; gap: 15px;">
+                    <a href="#" class="btn" style="background-color: var(--accent-color); color: white; text-align: center;">立即注册账号</a>
+                    <a href="#" class="btn" style="background-color: rgba(255,255,255,0.1); color: white; text-align: center;">浏览今日热门</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>furarchi论坛</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">专注高端家居美学交流，连接设计师与生活家。</p>
+                </div>
+                <div class="footer-col">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">版块导航</a></li>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>热门版块</h3>
+                    <ul>
+                        <li><a href="#">现代家具设计</a></li>
+                        <li><a href="#">室内装修</a></li>
+                        <li><a href="#">品牌测评</a></li>
+                        <li><a href="#">软装搭配</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>联系方式</h3>
+                    <ul>
+                        <li>合作邮箱: contact@furarchi.com</li>
+                        <li>商务合作: bd@furarchi.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 furarchi论坛 版权所有. 本站内容仅供交流学习使用.
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
