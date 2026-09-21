@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="独眼小僧哪里多？本站为您提供关于独眼小僧的详细攻略、刷新位置、捕捉技巧及常见问题解答，帮助您高效完成相关任务。">
+    <meta name="keywords" content="独眼小僧哪里多,独眼小僧,攻略,刷新点,捕捉">
+    <title>独眼小僧哪里多 - 高效刷新点与捕捉攻略指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-md) 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main Layout */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Sections */
+        section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+            border-left: 4px solid var(--accent-color);
+            padding-left: var(--spacing-sm);
+            color: var(--primary-color);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+            color: var(--primary-color);
+        }
+
+        /* Location List */
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .location-card {
+            border: 1px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: #fafafa;
+        }
+
+        .location-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: var(--accent-color);
+        }
+
+        .location-icon {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-sm);
+            display: block;
+        }
+
+        .location-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .location-info {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e3f2fd;
+            color: #1976d2;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-top: 8px;
+        }
+
+        /* Tips & Tricks */
+        .tips-list {
+            list-style: none;
+        }
+
+        .tips-list li {
+            margin-bottom: var(--spacing-sm);
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .tips-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: var(--spacing-md) 0;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            margin-top: var(--spacing-sm);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            display: none; /* Hidden by default, JS toggles */
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: "-";
+        }
+
+        .faq-item.active .faq-question::before {
+            content: "+";
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: var(--spacing-md);
+            border-bottom: 2px solid #eee;
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .mini-stat {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-sm);
+            font-size: 0.9rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #eee;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer-links {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+
+            nav ul {
+                gap: var(--spacing-md);
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span>◆</span> 独眼小僧攻略站
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#locations">刷新点</a></li>
+                    <li><a href="#tips">捕捉技巧</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>独眼小僧哪里多？</h1>
+                <p>本站为您整理了独眼小僧的高频刷新区域、最佳捕捉时间及实用技巧，助您轻松完成收集目标。</p>
+            </div>
+        </section>
+
+        <div class="container content-wrapper">
+            <!-- Left Content -->
+            <div class="main-column">
+                
+                <!-- High Frequency Locations -->
+                <section id="locations">
+                    <h2>热门刷新区域推荐</h2>
+                    <p style="margin-bottom: 20px; color: #666;">根据大量玩家反馈，以下区域是独眼小僧出现频率最高的地点。</p>
+                    
+                    <div class="location-grid">
+                        <article class="location-card">
+                            <span class="location-icon">🏯</span>
+                            <h3 class="location-name">和风庭院</h3>
+                            <p class="location-info">位于主城东侧，每日刷新时间 08:00 - 10:00。该区域受雨天气影响较大，刷新率提升 20%。</p>
+                            <span class="tag">必刷点</span>
+                        </article>
+
+                        <article class="location-card">
+                            <span class="location-icon">🌲</span>
+                            <h3 class="location-name">幽暗森林</h3>
+                            <p class="location-info">靠近地图边缘的古老森林，夜晚（20:00 - 06:00）独眼小僧活动最为频繁。</p>
+                            <span class="tag">夜间高发</span>
+                        </article>
+
+                        <article class="location-card">
+                            <span class="location-icon">⛩️</span>
+                            <h3 class="location-name">神社祭坛</h3>
+                            <p class="location-info">特定的节日活动期间，神社祭坛区域会刷新大量独眼小僧，是快速收集的最佳场所。</p>
+                            <span class="tag">限时活动</span>
+                        </article>
+
+                        <article class="location-card">
+                            <span class="location-icon">🛶</span>
+                            <h3 class="location-name">静水河畔</h3>
+                            <p class="location-info">河流附近的草丛和石缝中。建议使用“探测”技能来快速定位。</p>
+                            <span class="tag">水域</span>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Tips & Tricks -->
+                <section id="tips">
+                    <h2>高效捕捉技巧</h2>
+                    <ul class="tips-list">
+                        <li><strong>时间选择：</strong>建议在游戏内的“黄昏”时间段进行搜寻，此时独眼小僧的活跃度最高。</li>
+                        <li><strong>装备推荐：</strong>携带具有“迷彩”或“潜行”属性的装备，可以减少被独眼小僧发现后的逃跑概率，从而增加捕捉成功率。</li>
+                        <li><strong>技能搭配：</strong>使用“定身术”或“眩晕”类技能是捕捉独眼小僧的关键，普通攻击很难将其留驻。</li>
+                        <li><strong>队伍配置：</strong>建议组队前往，一名玩家负责吸引仇恨，另一名玩家负责布置陷阱，效率可提升 50% 以上。</li>
+                        <li><strong>清理环境：</strong>刷新点周围如果有其他高等级怪物，可能会抢夺独眼小僧，建议先清理杂兵。</li>
+                    </ul>
+                </section>
+
+                <!-- FAQ -->
+                <section id="faq">
+                    <h2>常见问题解答</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">独眼小僧会自动刷新吗？</div>
+                        <div class="faq-answer">是的，独眼小僧属于环境生物，在指定的刷新点会自动生成。但刷新周期通常为 30 分钟至 1 小时，请耐心等待。</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">捕捉失败后它会消失吗？</div>
+                        <div class="faq-answer">捕捉失败会导致独眼小僧进入“逃逸”状态，随后会消失一段时间。建议在捕捉前准备好足够的“强力捕捉球”。</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">为什么我在热门区域找不到？</div>
+                        <div class="faq-answer">热门区域可能有其他玩家抢先捕捉。您可以尝试前往地图边缘的冷门区域，或者等待系统全服刷新。</div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside>
+                <!-- Progress Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="sidebar-title">您的收集进度</h3>
+                    <div class="mini-stat">
+                        <span>当前数量</span>
+                        <span>12 / 50</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 24%;"></div>
+                    </div>
+                    <p style="font-size: 0.8rem; color: #999; margin-top: 10px;">预计还需 2 小时 15 分钟完成收集</p>
+                </div>
+
+                <!-- Equipment Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="sidebar-title">推荐装备</h3>
+                    <ul style="list-style: none; font-size: 0.9rem;">
+                        <li style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #eee;">
+                            <strong>迷彩斗笠</strong><br>
+                            <span style="color:#666; font-size: 0.8rem;">提升潜行等级，减少被察觉概率</span>
+                        </li>
+                        <li>
+                            <strong>定身符</strong><br>
+                            <span style="color:#666; font-size: 0.8rem;">捕捉时必定定身目标 3 秒</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Warning Widget -->
+                <div class="sidebar-widget" style="background-color: #fff3cd; border: 1px solid #ffeeba;">
+                    <h3 class="sidebar-title" style="color: #856404; border-color: #ffeeba;">注意事项</h3>
+                    <p style="font-size: 0.85rem; color: #856404;">独眼小僧具有攻击性，被攻击时不要慌张，保持距离使用远程技能。</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于本站</a>
+                <a href="#">免责声明</a>
+                <a href="#">联系站长</a>
+                <a href="#">地图索引</a>
+            </div>
+            <p class="copyright">Copyright © 2023 独眼小僧攻略站. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
